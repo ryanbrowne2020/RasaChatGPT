@@ -1,0 +1,16 @@
+version: "3.0"
+nlu:
+
+- intent: begin
+  examples: |
+    - let's begin
+    - shall we begin?
+    - let's start
+    - let's get going
+
+- intent: thanks
+  examples: |
+    - thank you that's great
+    - thanks very much
+    - cheers, great
+    - that's a big help

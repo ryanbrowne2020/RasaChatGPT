@@ -1,0 +1,25 @@
+version: "3.0"
+
+stories:
+- story: interactive story 1
+  steps:
+  - intent: begin
+  - action: chatGPT_form
+  - active_loop: chatGPT_form
+  - slot_was_set:
+    - requested_slot: firsttext
+  - slot_was_set:
+    - firsttext: something
+  - slot_was_set:
+    - requested_slot: nexttext
+  - slot_was_set:
+    - nexttext: somethingelse
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_finished
+
+- story: interactive story 1
+  steps:
+  - intent: thanks
+  - action: utter_welcome

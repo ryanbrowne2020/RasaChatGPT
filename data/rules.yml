@@ -1,0 +1,18 @@
+version: "3.0"
+
+rules:
+- rule: Activate form
+  steps:
+  - intent: begin
+  - action: chatGPT_form
+  - active_loop: chatGPT_form
+
+- rule: Submit form
+  condition:
+  - active_loop: chatGPT_form
+  steps:
+  - action: chatGPT_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_finished
